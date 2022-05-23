@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/glasses/static/css/main.828f5cb5.css",
+    "main.js": "/glasses/static/js/main.38890487.js",
+    "static/js/787.9420d9ad.chunk.js": "/glasses/static/js/787.9420d9ad.chunk.js",
+    "static/media/Layer1.jpg": "/glasses/static/media/Layer1.e76104cff51e7d74664d.jpg",
+    "static/media/Layer3.jpg": "/glasses/static/media/Layer3.8dea1a662f08162fbefd.jpg",
+    "static/media/Layer2.jpg": "/glasses/static/media/Layer2.ddfc107a1b975944be3a.jpg",
+    "static/media/Layer4.jpg": "/glasses/static/media/Layer4.0dd48a3d318edb814115.jpg",
+    "static/media/elem12.png": "/glasses/static/media/elem12.38d5a61a91180ef253d0.png",
+    "static/media/elem14.png": "/glasses/static/media/elem14.38d5a61a91180ef253d0.png",
+    "static/media/elem3.png": "/glasses/static/media/elem3.d924ab62e69f6d672c33.png",
+    "static/media/elem11.png": "/glasses/static/media/elem11.7e275ffada5c3b915168.png",
+    "static/media/elem5.png": "/glasses/static/media/elem5.19f8b9c2da8fdef85d5c.png",
+    "static/media/elem2.png": "/glasses/static/media/elem2.d25298ad254293d473f4.png",
+    "static/media/elem1.png": "/glasses/static/media/elem1.49d951a510d53f66fe67.png",
+    "static/media/elem15.png": "/glasses/static/media/elem15.b04c3ed535a584982d49.png",
+    "static/media/elem4.png": "/glasses/static/media/elem4.b04c3ed535a584982d49.png",
+    "static/media/elem7.png": "/glasses/static/media/elem7.ac6494cefec1747a625d.png",
+    "static/media/elem13.png": "/glasses/static/media/elem13.a4a5887f1ade9cea2895.png",
+    "static/media/elem6.png": "/glasses/static/media/elem6.a4a5887f1ade9cea2895.png",
+    "static/media/elem8.png": "/glasses/static/media/elem8.5e3ab187513f78b2d303.png",
+    "static/media/elem10.png": "/glasses/static/media/elem10.c2329ca833c165263c17.png",
+    "static/media/elem9.png": "/glasses/static/media/elem9.c2329ca833c165263c17.png",
+    "index.html": "/glasses/index.html",
+    "main.828f5cb5.css.map": "/glasses/static/css/main.828f5cb5.css.map",
+    "main.38890487.js.map": "/glasses/static/js/main.38890487.js.map",
+    "787.9420d9ad.chunk.js.map": "/glasses/static/js/787.9420d9ad.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.828f5cb5.css",
+    "static/js/main.38890487.js"
+  ]
+}
