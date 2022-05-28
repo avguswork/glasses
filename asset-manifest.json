@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/glasses/static/css/main.b1ee3e5b.css",
-    "main.js": "/glasses/static/js/main.edeb83fb.js",
+    "main.js": "/glasses/static/js/main.95f4e47b.js",
     "static/js/787.9420d9ad.chunk.js": "/glasses/static/js/787.9420d9ad.chunk.js",
     "static/media/Layer1.jpg": "/glasses/static/media/Layer1.e76104cff51e7d74664d.jpg",
     "static/media/Layer3.jpg": "/glasses/static/media/Layer3.8dea1a662f08162fbefd.jpg",
@@ -25,11 +25,11 @@
     "static/media/elem9.png": "/glasses/static/media/elem9.c2329ca833c165263c17.png",
     "index.html": "/glasses/index.html",
     "main.b1ee3e5b.css.map": "/glasses/static/css/main.b1ee3e5b.css.map",
-    "main.edeb83fb.js.map": "/glasses/static/js/main.edeb83fb.js.map",
+    "main.95f4e47b.js.map": "/glasses/static/js/main.95f4e47b.js.map",
     "787.9420d9ad.chunk.js.map": "/glasses/static/js/787.9420d9ad.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b1ee3e5b.css",
-    "static/js/main.edeb83fb.js"
+    "static/js/main.95f4e47b.js"
   ]
 }
