@@ -1,0 +1,40 @@
+.product_block{
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+
+.filter_block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 18px;
+}
+
+label{
+    color: black;
+}
+
+.filter{
+    color: black;
+    border: 1px black solid;
+    font-size: 15px;
+    margin-left: 15px;
+}
+
+
+
+
+.product_row{
+    width: 75%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    grid-gap: 40px;
+    grid-auto-flow: dense;
+}

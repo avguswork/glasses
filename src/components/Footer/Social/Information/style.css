@@ -1,0 +1,22 @@
+.informationBlock {
+  width: 100%;
+  max-width: 240px;
+  min-width: 230px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.info_header {
+  margin: 50px 0px 30px 30px;
+}
+
+.info_text {
+  margin: 0px 0px 0px 10px;
+  line-height: 30px;
+}
+
+.ul, li {
+  margin: 0px;
+  padding: 0px;
+}

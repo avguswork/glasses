@@ -1,0 +1,23 @@
+.wraper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cart_header_row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  max-width: 1024px;
+  justify-content: center;
+  background-color: #5ed4ff;
+}
+
+.cart_product_col {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

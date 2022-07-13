@@ -1,0 +1,37 @@
+
+$wc: 1024px; // width-content.  ширина контентной части 
+
+
+@mixin flex-row(){
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@mixin flex-column(){
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin grid($width, $gap){
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($a, 1fr));
+    grid-gap: $gap;
+    grid-auto-flow: dense;
+}
+
+.wraper{
+    @include flex-column;
+    
+    
+}
+
+
+.genderProductBlock{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}

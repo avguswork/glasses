@@ -1,0 +1,18 @@
+@import "../../../styles.scss";
+
+.cart_header_row{
+    @include flex-row;
+    height: 100px;
+    width: 100%;
+    max-width: $wc;
+    justify-content: center;
+    background-color: rgb(94, 212, 255);
+    
+
+}
+
+.cart_product_col{
+    width: 25%;
+    @include flex-column;
+}
+

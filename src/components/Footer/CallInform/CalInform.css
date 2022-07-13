@@ -1,0 +1,37 @@
+.callinform_background {
+    width: 100%;
+    height: max-content;
+    background-color: #4cb1ca;
+    display: flex;
+    justify-content: center;
+    
+  }
+  
+  .inform_block {
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0px;
+  }
+  
+  .block_Column {
+    display: flex;
+    align-items: center;
+  }
+  
+  .callinText {
+    margin: 0px 20px;
+    color: white;
+  }
+
+  @media (max-width:800px){
+    .inform_block {
+      flex-direction: column;
+    }
+    .block_Column {
+      margin: 10px 0px;
+    }
+  }
+  
