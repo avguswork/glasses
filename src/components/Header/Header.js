@@ -1,9 +1,8 @@
 import React from "react";
 import "./style.scss";
 import {Link} from "react-router-dom";
-import { useContext} from "react";
+import { useContext, useState} from "react";
 import {ContextApp} from "../../reducer";
-import {productCart}  from "../../logic";
 import LanguageContext from "../../context";
 
 
@@ -52,8 +51,14 @@ const OptionsCurrensy = [
 
 function Header({changeLanguage, changeCurrensy}) {
 
-    const {dispatch} = useContext(ContextApp);
+    const {state, dispatch} = useContext(ContextApp);
     const {translate} = useContext(LanguageContext)
+    // Данные с input
+    const [title, setTitle] = useState('')
+    
+
+     
+    
     
     return(
         <>
@@ -108,14 +113,14 @@ function Header({changeLanguage, changeCurrensy}) {
                     </div>
                     <div className="search_cart">
                         <div className="search">
-                            <input type="search" placeholder="Search.." id="search"/>
-                            <button className="searchButton" id="searchButton">&#128269;</button>
+                            <input type="search" placeholder="Search.." onChange={event => setTitle(event.target.value)}  id="search"/>
+                            <button className="searchButton" onClick={() => { dispatch({ type: 'setProductSearch', payload: title})  }} id="searchButton">&#128269;</button>
                         </div>
                         
                         <div className="iconBlock">
                             
                             <Link to="/glasses/cart"><button className="product_btn"><img src={require('./image/twoo.png')} alt="2"/></button></Link>
-                            <p id="lng-cart">{translate.cart}</p>({productCart.length})
+                            <p id="lng-cart">{translate.cart}</p>({state.productCart.length})
                             
                         </div>
                         

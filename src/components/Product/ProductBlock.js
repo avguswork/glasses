@@ -15,7 +15,7 @@ import LanguageContext from "../../context";
 function ProductBlock ({gender}) {
 
     const {translate} = useContext(LanguageContext)
-    const {state} = useContext(ContextApp);
+    const {state, dispatch} = useContext(ContextApp);
 //Получения данных с GenderProductBlock
     let productData = gender
 
@@ -46,17 +46,35 @@ function ProductBlock ({gender}) {
     }
 
     
-  //Перересовка в зависимости от положения фильтра
-
-    /*if(productData !== products ){
-        
-        setProducts(() => {
-           return products = state.productData})
-    }*/
-    
         
 //Поиск по товарам
 
+if(state.searchProduct !== 'All'){
+    setProducts(() => {
+        return products =  products.filter((product) => {
+
+            if(product.id === state.searchProduct*1){
+                dispatch({ type: 'setProductSearch', payload: 'All'})
+                console.log(product)
+                return product.id 
+            }
+           else if(product.name === state.searchProduct){
+            dispatch({ type: 'setProductSearch', payload: 'All'})
+                return product.name 
+            }
+           else if(product.price === state.searchProduct*1){
+                dispatch({ type: 'setProductSearch', payload: 'All'})
+                return product.price 
+            }
+           else if(product.status === state.searchProduct){
+                dispatch({ type: 'setProductSearch', payload: 'All'})
+                return product.status
+            }
+        })})
+        console.log(products)
+}
+
+/*
 setTimeout( buttonSearch, 1 )
 
        function buttonSearch(){
@@ -70,17 +88,17 @@ setTimeout( buttonSearch, 1 )
         function runSearch(){
             
             const searchValue = document.querySelector('#search')
-            console.log(searchValue.value)
+            
         setProducts(() => {
             return products =  products.filter((product) => {
                 
-                console.log(product.name)
+                
 
                 if(product.id === searchValue.value*1){
                     return product.id 
                 }
                else if(product.name === searchValue.value){
-                    console.log('name')
+                    
                     return product.name 
                 }
                else if(product.price === searchValue.value*1){
@@ -91,9 +109,9 @@ setTimeout( buttonSearch, 1 )
                 }
             })
         })
-        console.log(products)
+        
     }
-
+*/
 
 // Передача данных в ProductItem
 

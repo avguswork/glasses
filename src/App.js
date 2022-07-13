@@ -1,12 +1,11 @@
 import React from "react";
 import "./styles.scss";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import {useContext, useEffect} from "react";
+import {useContext} from "react";
 import {ContextApp} from "./reducer.js";
 import Home from "./pages/Home";
 import Card from "./pages/Card";
 import Cart from "./pages/Cart";
-import GenderProductBlock from "./pages/GenderProductBlock";
 import Women from "./pages/Women";
 import Men from "./pages/Men";
 import Other from "./pages/Other";
@@ -16,8 +15,8 @@ import Other from "./pages/Other";
 function App({changeLanguage}) {
 
 
-  // Смена валюты
-  const {dispatch} = useContext(ContextApp);
+// Смена валюты
+  const { dispatch} = useContext(ContextApp);
 
   const changeCurrensy = (event) => {
       
@@ -35,14 +34,6 @@ function App({changeLanguage}) {
     dispatch({ type: 'currensy', payload: currensy})
     
   }
-
-  
-
-
-  //Поднатия страницы вверх после рендера
-useEffect(()=>{
-  window.scrollTo(0, 0)
-})
 //
 
   return(
@@ -66,4 +57,3 @@ useEffect(()=>{
 export default App;
 
 
-//<Route path="glasses/gender" element = {<GenderProductBlock changeLanguage={changeLanguage} changeCurrensy={changeCurrensy}/>} />

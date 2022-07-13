@@ -1,7 +1,7 @@
 import React from "react";
 import ProductBlock from "../components/Product/ProductBlock";
 import '../styles.scss';
-import {useEffect, useContext, useState } from "react";
+import { useContext} from "react";
 import {ContextApp} from "../reducer";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";

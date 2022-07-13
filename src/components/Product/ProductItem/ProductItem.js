@@ -72,7 +72,7 @@ function ProductItem (props) {
     return(
         <div className="product_item_block">
             <div className={statusProduct}>
-                <img src={statusImage} />
+                <img src={statusImage} alt=""/>
             </div>
             <div className="product_item">
             

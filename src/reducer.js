@@ -4,7 +4,7 @@ import data from "./Data";
 export const ContextApp = React.createContext();
 
 //Счетчик корзины
-export const initialState = {productData: data, currensy: '$', productCart: [], card: '', }
+export const initialState = {productData: data, currensy: '$', productCart: [], card: [], searchProduct: 'All', }
 
 
 export const reducer = (state, action) => {
@@ -26,11 +26,23 @@ export const reducer = (state, action) => {
             card: action.payload
           }
 
-        case 'setProductToCart':
+        case 'setProductInCart':
           return {
             ...state,
             productCart:  action.payload 
            }
+        
+           case 'dellProductInCart':
+            return {
+              ...state,
+              productCart:  action.payload 
+             }
+
+           case 'setProductSearch':
+            return {
+              ...state,
+              searchProduct:  action.payload 
+             }
        
           
         case 'home':

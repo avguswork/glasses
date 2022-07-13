@@ -1,16 +1,15 @@
 import React, { useState, useContext} from "react";
 import "./style.scss";
-import { SetProductToCart, productCart } from "../../../logic";
 import { Link } from "react-router-dom";
 import {ContextApp} from "../../../reducer";
 import data from "../../../Data";
-import LanguageContext from "../../../context";
+//import LanguageContext from "../../../context";
 
 
 function ProductCard(){
     
     const {state, dispatch} = useContext(ContextApp);
-    const {translate} = useContext(LanguageContext)
+    //const {translate} = useContext(LanguageContext)
 
     let product = data.filter((element) => {
         return (element.id === state.card.id)
@@ -64,9 +63,15 @@ function ProductCard(){
 
     }
 
-    //Создаем масив копируем туда инфо с productCart масива и пушим новый выбраный продукт
-    const arrays = productCart.slice(0)
-    arrays.push(state.card)
+    //Создаем масив копируем туда инфо и пушим новый выбраный продукт
+    
+    let arrays
+    const addCart = () => {
+        arrays = state.productCart.splice(0)
+        arrays.push(state.card)
+    }
+    
+    
     
     
 
@@ -87,7 +92,7 @@ return(
                 <h1>{state.card.name}</h1>
                 <div className="card_price_row">
                 <h2>{`${currensy}${price}`}</h2>
-                <button  className="btn" id="buyBtn" ><img src={require('./image/price.png')} onClick={() =>{SetProductToCart(state.card); dispatch({ type: 'setProductToCart', payload: arrays})}}  alt="price"/></button>
+                <button  className="btn" id="buyBtn" ><img src={require('./image/price.png')} onClick={() =>{ addCart(); dispatch({ type: 'setProductInCart', payload: arrays})}}  alt="price"/></button>
                 </div>
                 <p>Eyepieces with APEL stamp. U.S. 
                 Army Authorized Protective Eyewear List (APEL) - 
@@ -104,3 +109,5 @@ return(
 }
 
 export default ProductCard;
+
+//SetProductToCart(state.card);
