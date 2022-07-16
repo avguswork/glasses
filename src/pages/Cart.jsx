@@ -8,7 +8,7 @@ import { ContextApp } from "../reducer";
 
 
 
-function Cart({changeLanguage, changeCurrensy}){
+function Cart({changeLanguage, changeCurrensy, search}){
 
     const {state, dispatch} = useContext(ContextApp);
 
@@ -33,7 +33,7 @@ function Cart({changeLanguage, changeCurrensy}){
     
     return(
         <>
-        <Header changeLanguage={changeLanguage} changeCurrensy={changeCurrensy}/>
+        <Header changeLanguage={changeLanguage} changeCurrensy={changeCurrensy} search={search}/>
        <div className="cart">
         <div className="cart_block">
             <div className="cart_block_row">

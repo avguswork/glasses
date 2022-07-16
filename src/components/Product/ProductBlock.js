@@ -16,14 +16,29 @@ function ProductBlock ({gender}) {
 
     const {translate} = useContext(LanguageContext)
     const {state, dispatch} = useContext(ContextApp);
+
 //Получения данных с GenderProductBlock
     let productData = gender
-
     if(gender === undefined){
         productData = state.productData
     }
-//
+//  
+
     let [products, setProducts] = useState(productData);   
+
+    
+//Поиск товаров
+
+    if(state.resultSearch !== '' && state.resultSearch !== products && state.search !== ''){
+        setProducts(products = productData)
+        setProducts(products = state.resultSearch)
+    }
+
+    if(state.search === '' && state.resultSearch === products){
+        setProducts(products = state.productData)
+    }
+
+
 
     
 // Фильтрация товара на странице
@@ -48,70 +63,32 @@ function ProductBlock ({gender}) {
     
         
 //Поиск по товарам
-
+/*
 if(state.searchProduct !== 'All'){
+    
     setProducts(() => {
         return products =  products.filter((product) => {
 
             if(product.id === state.searchProduct*1){
-                dispatch({ type: 'setProductSearch', payload: 'All'})
-                console.log(product)
+               console.log(product)
                 return product.id 
             }
            else if(product.name === state.searchProduct){
-            dispatch({ type: 'setProductSearch', payload: 'All'})
+            
                 return product.name 
             }
            else if(product.price === state.searchProduct*1){
-                dispatch({ type: 'setProductSearch', payload: 'All'})
+                
                 return product.price 
             }
            else if(product.status === state.searchProduct){
-                dispatch({ type: 'setProductSearch', payload: 'All'})
+                
                 return product.status
             }
         })})
-        console.log(products)
-}
+        dispatch({ type: 'setProductSearch', payload: 'All'})
+}*/
 
-/*
-setTimeout( buttonSearch, 1 )
-
-       function buttonSearch(){
-        
-        const searchButton = document.querySelector('#searchButton');
-        searchButton.addEventListener('click', runSearch)
-        
-        
-        }
-        
-        function runSearch(){
-            
-            const searchValue = document.querySelector('#search')
-            
-        setProducts(() => {
-            return products =  products.filter((product) => {
-                
-                
-
-                if(product.id === searchValue.value*1){
-                    return product.id 
-                }
-               else if(product.name === searchValue.value){
-                    
-                    return product.name 
-                }
-               else if(product.price === searchValue.value*1){
-                    return product.price 
-                }
-               else if(product.status === searchValue.value){
-                    return product.status
-                }
-            })
-        })
-        
-    }
-*/
 
 // Передача данных в ProductItem
 

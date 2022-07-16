@@ -49,15 +49,11 @@ const OptionsCurrensy = [
 //
 
 
-function Header({changeLanguage, changeCurrensy}) {
+function Header({changeLanguage, changeCurrensy, search}) {
 
     const {state, dispatch} = useContext(ContextApp);
     const {translate} = useContext(LanguageContext)
-    // Данные с input
-    const [title, setTitle] = useState('')
     
-
-     
     
     
     return(
@@ -113,8 +109,8 @@ function Header({changeLanguage, changeCurrensy}) {
                     </div>
                     <div className="search_cart">
                         <div className="search">
-                            <input type="search" placeholder="Search.." onChange={event => setTitle(event.target.value)}  id="search"/>
-                            <button className="searchButton" onClick={() => { dispatch({ type: 'setProductSearch', payload: title})  }} id="searchButton">&#128269;</button>
+                            <input type="search" placeholder="Search.." onChange={(event) => { dispatch({ type: 'setProductSearch', payload: event.target.value})}}  id="search"/>
+                            <button className="searchButton" onClick={() => {search() }} id="searchButton">&#128269;</button>
                         </div>
                         
                         <div className="iconBlock">

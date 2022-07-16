@@ -5,11 +5,11 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 
 
-function Card({changeLanguage, changeCurrensy}){
+function Card({changeLanguage, changeCurrensy, search}){
 
 return(
    <>
-      <Header changeLanguage={changeLanguage} changeCurrensy={changeCurrensy}/>
+      <Header changeLanguage={changeLanguage} changeCurrensy={changeCurrensy} search={search}/>
       <ProductCard />
       <Footer />
    </>  

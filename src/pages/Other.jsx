@@ -6,13 +6,13 @@ import {ContextApp} from "../reducer";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 
-const Other = ({changeLanguage, changeCurrensy}) => {
+const Other = ({changeLanguage, changeCurrensy, search}) => {
     const {state} = useContext(ContextApp);
      let gender = state.productData
     
     return(
         <>
-        <Header changeLanguage={changeLanguage} changeCurrensy={changeCurrensy}/>
+        <Header changeLanguage={changeLanguage} changeCurrensy={changeCurrensy} search={search}/>
         <div id="genderProductBlock" className="genderProductBlock">
         <ProductBlock gender={gender}/>
         </div>

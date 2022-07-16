@@ -4,10 +4,10 @@ import Slider from "../components/Slider/Slider";
 import ProductBlock from "../components/Product/ProductBlock";
 import Footer from "../components/Footer/Footer";
 
-const Home = ({changeLanguage, changeCurrensy}) => {
+const Home = ({changeLanguage, changeCurrensy, search}) => {
     return(
         <>
-            <Header changeLanguage={changeLanguage} changeCurrensy={changeCurrensy}/>
+            <Header changeLanguage={changeLanguage} changeCurrensy={changeCurrensy} search={search}/>
             <Slider />
             <ProductBlock />
             <Footer />
