@@ -1,0 +1,27 @@
+@import "../../styles.scss";
+
+
+.form_wraper{
+    @include flex-column;
+    width: 100%;
+    //max-width: $wc;
+    background: linear-gradient(white, $color1);
+    border-width:  2px;
+    border-style: solid;
+    border-image: linear-gradient(to bottom, rgb(255, 255, 255), grey) 1;
+    //margin: 100px 0px;
+}
+
+.login_form{
+    @include flex-column;
+    width: 100%;
+    margin: 100px 0px;
+    
+}
+
+
+.login_form_input{
+    border: 1px solid grey;
+    border-radius: 25px;
+    margin: 10px;
+}

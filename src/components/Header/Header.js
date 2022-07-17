@@ -91,7 +91,7 @@ function Header({changeLanguage, changeCurrensy, search}) {
                     <div className="rightColumn">
                         
                         
-                        <button id="lng-login2" className="btn1">{translate.login2}</button>┃
+                        <Link to="/glasses/login"><button id="lng-login2" className="btn1">{translate.login2}</button></Link> ┃
                         <button id="lng-signin2" className="btn1">{translate.signin2}</button>
                     </div>
 

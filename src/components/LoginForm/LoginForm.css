@@ -1,0 +1,38 @@
+.wraper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.genderProductBlock {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.form_wraper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background: linear-gradient(white, #4cb1ca);
+  border-width: 2px;
+  border-style: solid;
+  border-image: linear-gradient(to bottom, white, grey) 1;
+}
+
+.login_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 100px 0px;
+}
+
+.login_form_input {
+  border: 1px solid grey;
+  border-radius: 25px;
+  margin: 10px;
+}
