@@ -32,26 +32,29 @@ const OptionsLanguage = [
 const OptionsCurrensy = [
     {
         id: 'curensyUSD',
-        value: 'USD',
+        value: '$',
         name: 'USD'
     },
     {
         id: 'curensyUAH',
-        value: 'UAH',
+        value: '₴',
         name: 'UAH'
     },
     {
         id: 'curensyEUR',
-        value: 'EUR',
+        value: '€',
         name: 'EUR'
     }
 ]
 
-function Header({changeLanguage, changeCurrensy, search}) {
+function Header({changeLanguage, search}) {
 
     const {state, dispatch} = useContext(ContextApp);
-    const {translate} = useContext(LanguageContext)
-    
+    const {translate} = useContext(LanguageContext);
+
+    const changeCurrensy = (event) => {
+        dispatch({ type: 'currensy', payload: event.target.value})
+    }
 
     return(
         <>

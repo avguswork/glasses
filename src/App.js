@@ -21,23 +21,6 @@ function App({changeLanguage}) {
 // Смена валюты
   const {state, dispatch} = useContext(ContextApp);
 
-  const changeCurrensy = (event) => {
-      
-      let currensy;
-      if(event.target.value === 'USD'){
-        currensy = '$'
-    }
-     if(event.target.value === 'UAH'){
-      currensy = '₴'
-    }
-     if(event.target.value === 'EUR'){
-      currensy = '€'
-    }
-
-    dispatch({ type: 'currensy', payload: currensy})
-    
-  }
-//
 //Поиск
 
 const search = () => {
@@ -70,7 +53,7 @@ const search = () => {
     <div className="site">
     
       <BrowserRouter>
-        <Header changeLanguage={changeLanguage} changeCurrensy={changeCurrensy} search={search}/>
+        <Header changeLanguage={changeLanguage}  search={search}/>
         <Routes>
           <Route path="glasses" element = { <Home/> } />
           <Route path="glasses/women" element = {<Women/> } />
