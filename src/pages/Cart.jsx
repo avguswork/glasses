@@ -1,14 +1,12 @@
 import React from "react";
 import { useState, useContext } from "react";
 import "./cartStyle.scss";
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
 import CartItem from "../components/Cart/CartItem/CartItem";
 import { ContextApp } from "../reducer";
 
 
 
-function Cart({changeLanguage, changeCurrensy, search}){
+function Cart(){
 
     const {state, dispatch} = useContext(ContextApp);
 
