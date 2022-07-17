@@ -1,14 +1,10 @@
 import React from "react";
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
 import LoginForm from "../components/LoginForm/LoginForm";
 
-const Login = ({changeLanguage, changeCurrensy, search}) => {
+const Login = () => {
     return(
         <>
-            <Header changeLanguage={changeLanguage} changeCurrensy={changeCurrensy} search={search}/>
-            <LoginForm />
-            <Footer /> 
+            <LoginForm /> 
         </>
     )
 }

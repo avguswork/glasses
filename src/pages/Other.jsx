@@ -3,20 +3,18 @@ import ProductBlock from "../components/Product/ProductBlock";
 import '../styles.scss';
 import { useContext} from "react";
 import {ContextApp} from "../reducer";
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
 
-const Other = ({changeLanguage, changeCurrensy, search}) => {
+
+const Other = () => {
     const {state} = useContext(ContextApp);
      let gender = state.productData
     
     return(
         <>
-        <Header changeLanguage={changeLanguage} changeCurrensy={changeCurrensy} search={search}/>
+        
         <div id="genderProductBlock" className="genderProductBlock">
         <ProductBlock gender={gender}/>
         </div>
-        <Footer />
         </>
     )
 }

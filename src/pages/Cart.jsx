@@ -33,7 +33,7 @@ function Cart({changeLanguage, changeCurrensy, search}){
     
     return(
         <>
-        <Header changeLanguage={changeLanguage} changeCurrensy={changeCurrensy} search={search}/>
+        
        <div className="cart">
         <div className="cart_block">
             <div className="cart_block_row">
@@ -55,7 +55,7 @@ function Cart({changeLanguage, changeCurrensy, search}){
           
             
        </div>
-       <Footer />
+    
        </>
         
     )

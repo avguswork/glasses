@@ -3,6 +3,7 @@ import "./styles.scss";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import {useContext} from "react";
 import {ContextApp} from "./reducer.js";
+import Header from "./components/Header/Header";
 import Home from "./pages/Home";
 import Card from "./pages/Card";
 import Cart from "./pages/Cart";
@@ -10,6 +11,7 @@ import Women from "./pages/Women";
 import Men from "./pages/Men";
 import Other from "./pages/Other";
 import Login from "./pages/Login";
+import Footer from "./components/Footer/Footer";
 
 
 
@@ -68,15 +70,17 @@ const search = () => {
     <div className="site">
     
       <BrowserRouter>
+        <Header changeLanguage={changeLanguage} changeCurrensy={changeCurrensy} search={search}/>
         <Routes>
-          <Route path="glasses" element = { <Home changeLanguage={changeLanguage} changeCurrensy={changeCurrensy} search={search}/> }/>
-          <Route path="glasses/women" element = {<Women changeLanguage={changeLanguage} changeCurrensy={changeCurrensy} search={search}/>} />
-          <Route path="glasses/men" element = {<Men changeLanguage={changeLanguage} changeCurrensy={changeCurrensy} search={search}/>} />
-          <Route path="glasses/other" element = {<Other changeLanguage={changeLanguage} changeCurrensy={changeCurrensy} search={search}/>} />
-          <Route path="glasses/card" element = {<Card changeLanguage={changeLanguage} changeCurrensy={changeCurrensy} search={search}/>} />
-          <Route path="glasses/cart" element = {<Cart changeLanguage={changeLanguage} changeCurrensy={changeCurrensy} search={search}/>} />
-          <Route path="glasses/login" element = {<Login changeLanguage={changeLanguage} changeCurrensy={changeCurrensy} search={search}/>}/>
+          <Route path="glasses" element = { <Home/> } />
+          <Route path="glasses/women" element = {<Women/> } />
+          <Route path="glasses/men" element = {<Men/> } />
+          <Route path="glasses/other" element = {<Other/> } />
+          <Route path="glasses/card" element = {<Card/> } />
+          <Route path="glasses/cart" element = {<Cart/> } />
+          <Route path="glasses/login" element = {<Login/> } />
         </Routes>
+        <Footer />
       </BrowserRouter> 
     </div>  
   ) 

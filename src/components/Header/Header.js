@@ -46,16 +46,13 @@ const OptionsCurrensy = [
         name: 'EUR'
     }
 ]
-//
-
 
 function Header({changeLanguage, changeCurrensy, search}) {
 
     const {state, dispatch} = useContext(ContextApp);
     const {translate} = useContext(LanguageContext)
     
-    
-    
+
     return(
         <>
         <header>
