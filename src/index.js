@@ -8,13 +8,6 @@ import reportWebVitals from './reportWebVitals';
 import LanguageContext from './context';
 import { Translate } from './translate.js';
 
-
-
-
-
-
-
-
 function Main(){
 
   // Смена языка
@@ -40,14 +33,8 @@ function Main(){
   )
 }
 
-
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  
-  <Main />
-  
-);
+root.render( <Main /> );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
