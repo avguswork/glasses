@@ -19,33 +19,13 @@ function Main(){
 
   // Смена языка
   
-  let [translate, setTranslate] = useState(Translate.EN)
+  let [translate, setTranslate] = useState(Translate.en)
   
-  
-  //let {language, setLanguage} = useContext(LanguageContext)
   const changeLanguage =(event) =>{
     console.log(event.target.value)
-    if(event.target.value === 'en'){
-      setTranslate(() => {
-        return translate  = Translate.EN
-        
-      })
-    }
-    if(event.target.value === 'ru'){
-      setTranslate(() => {
-        return translate  = Translate.RU
-        
-      })
-    }
-    if(event.target.value === 'ua'){
-      setTranslate(() => {
-        return translate  = Translate.UA
-      })
-    }
-  }  
- 
+    setTranslate(Translate[event.target.value])
+  }
   
-
  const [state, dispatch] = useReducer(reducer, initialState);
 
   return(
