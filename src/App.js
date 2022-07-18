@@ -13,7 +13,7 @@ import Other from "./pages/Other";
 import Login from "./pages/Login";
 import Footer from "./components/Footer/Footer";
 
-function App({changeLanguage}) {
+function App() {
 
 // Смена валюты
   const {state, dispatch} = useContext(ContextApp);
