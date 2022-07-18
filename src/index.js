@@ -15,7 +15,6 @@ function Main(){
   let [translate, setTranslate] = useState(Translate.en)
   
   const changeLanguage =(event) =>{
-    console.log(event.target.value)
     setTranslate(Translate[event.target.value])
   }
   
