@@ -5,30 +5,24 @@ import { useState, useContext } from "react";
 import {ContextApp} from "../../reducer";
 import LanguageContext from "../../context";
 
-
-
-
-
-
-
-
-function ProductBlock ({gender}) {
+function ProductBlock ({genderProduct}) {
 
     const {translate} = useContext(LanguageContext)
     const {state, dispatch} = useContext(ContextApp);
 
-//Получения данных с GenderProductBlock
-    let productData = gender
-    if(gender === undefined){
-        productData = state.productData
+//Получения данных с women, Men, Other
+    let productData = state.productData
+    if(genderProduct){
+        productData = genderProduct
     }
-//  
 
     let [products, setProducts] = useState(productData);   
 
     
 //Поиск товаров
+const filter = () => {
 
+}
     if(state.resultSearch !== '' && state.resultSearch !== products && state.search !== ''){
         setProducts(products = productData)
         setProducts(products = state.resultSearch)
@@ -55,48 +49,9 @@ function ProductBlock ({gender}) {
                     return( product.status === filterValue )
                 })
             })
-            
-            
         }
     }
 
-    
-        
-//Поиск по товарам
-/*
-if(state.searchProduct !== 'All'){
-    
-    setProducts(() => {
-        return products =  products.filter((product) => {
-
-            if(product.id === state.searchProduct*1){
-               console.log(product)
-                return product.id 
-            }
-           else if(product.name === state.searchProduct){
-            
-                return product.name 
-            }
-           else if(product.price === state.searchProduct*1){
-                
-                return product.price 
-            }
-           else if(product.status === state.searchProduct){
-                
-                return product.status
-            }
-        })})
-        dispatch({ type: 'setProductSearch', payload: 'All'})
-}*/
-
-
-// Передача данных в ProductItem
-
-    let productElement = products.map(product => {
-    return (<ProductItem product={product} key={product.id} />)
-    })
-
-//
     return(
         <div className="product_block">
         <h3 id="lng-products">{translate.products}</h3>
@@ -108,16 +63,11 @@ if(state.searchProduct !== 'All'){
                 <option id="lng-sale" value={'Sale'}>{translate.sale}</option>
             </select>
             </div>
-        
         <div className="product_row" id="product" >
-            {productElement}
+            {  products.map(product => {return (<ProductItem product={product} key={product.id} />)})}
         </div>
         </div>
         
-    )
-
-   
+    )  
 }
-
-
 export default ProductBlock;

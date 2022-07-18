@@ -6,12 +6,12 @@ import {ContextApp} from "../reducer";
 
 const Men = () => {
     const {state} = useContext(ContextApp);
-     let gender = state.productData
+     let genderProduct = state.productData
     
     return(
         <>
         <div id="genderProductBlock" className="genderProductBlock">
-        <ProductBlock gender={gender}/>
+        <ProductBlock genderProduct={genderProduct}/>
         </div>
         </>
     )
