@@ -13,10 +13,7 @@ import Other from "./pages/Other";
 import Login from "./pages/Login";
 import Footer from "./components/Footer/Footer";
 
-
-
 function App({changeLanguage}) {
-
 
 // Смена валюты
   const {state, dispatch} = useContext(ContextApp);
@@ -31,14 +28,14 @@ const search = () => {
       
       return element.id
     }
-     if(element.name === state.search){
+    else if(element.name === state.search){
       return element.name
     }
-     if(element.price === state.search*1){
+    else if(element.price === state.search*1){
                 
       return element.price 
     }
-     if(element.status === state.search){
+    else if(element.status === state.search){
     
       return element.status
     }
@@ -53,7 +50,7 @@ const search = () => {
     <div className="site">
     
       <BrowserRouter>
-        <Header changeLanguage={changeLanguage}  search={search}/>
+        <Header  search={search}/>
         <Routes>
           <Route path="glasses" element = { <Home/> } />
           <Route path="glasses/women" element = {<Women/> } />

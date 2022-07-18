@@ -24,8 +24,8 @@ function Main(){
     
     <React.StrictMode>
       <ContextApp.Provider value={{dispatch, state}}>
-        <LanguageContext.Provider value={{translate, setTranslate}}  >
-          <App changeLanguage={changeLanguage}/>
+        <LanguageContext.Provider value={{translate, changeLanguage}}  >
+          <App />
         </LanguageContext.Provider>
         </ContextApp.Provider>
     </React.StrictMode>

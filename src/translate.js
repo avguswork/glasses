@@ -1,7 +1,7 @@
 
 export const Translate = {
 
-    EN: {
+    en: {
         selectLang: "Language",
         selectCurensy: "Currensy",
         login: "Log in",
@@ -38,7 +38,7 @@ export const Translate = {
         contactUs: "Contact Us",
         },
 
-    RU: {
+    ru: {
         selectLang: "Язык:",
         selectCurensy: "Валюта",
         login: "Войти",
@@ -75,7 +75,7 @@ export const Translate = {
         contactUs: "Связаться с нами",
     },
 
-    UA: {
+    ua: {
         selectLang: "Мова:",
         selectCurensy: "Валюта",
         login: "Увійти",

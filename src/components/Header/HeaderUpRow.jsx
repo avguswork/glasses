@@ -47,10 +47,10 @@ const OptionsCurrensy = [
     }
 ]
 
-const HeaderUpRow = ({changeLanguage}) => {
+const HeaderUpRow = () => {
 
     const {dispatch} = useContext(ContextApp);
-    const {translate} = useContext(LanguageContext);
+    const {translate, changeLanguage} = useContext(LanguageContext);
 
     const changeCurrensy = (event) => {
         dispatch({ type: 'currensy', payload: event.target.value})
