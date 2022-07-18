@@ -11,17 +11,13 @@ import { Translate } from './translate.js';
 function Main(){
 
   // Смена языка
-  
   let [translate, setTranslate] = useState(Translate.en)
-  
   const changeLanguage =(event) =>{
     setTranslate(Translate[event.target.value])
   }
-  
- const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return(
-    
     <React.StrictMode>
       <ContextApp.Provider value={{dispatch, state}}>
         <LanguageContext.Provider value={{translate, changeLanguage}}  >
@@ -31,7 +27,6 @@ function Main(){
     </React.StrictMode>
   )
 }
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render( <Main /> );
 
