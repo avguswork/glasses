@@ -1,57 +1,42 @@
 import React from "react";
 import ProductItem from "./ProductItem/ProductItem";
 import './style.css';
-import { useState, useContext } from "react";
+import {useContext} from "react";
 import {ContextApp} from "../../reducer";
 import LanguageContext from "../../context";
 
-function ProductBlock ({genderProduct}) {
+function ProductBlock () {
 
     const {translate} = useContext(LanguageContext)
     const {state, dispatch} = useContext(ContextApp);
 
-//Получения данных с women, Men, Other
-    let productData = state.productData
-    if(genderProduct){
-        productData = genderProduct
-    }
+    let products = state.productData;
 
-    let [products, setProducts] = useState(productData);   
+    const Search = () => {
+      if(state.search === "All"){
+        products = state.productData
+      }
+      else if(state.search !== ""){
+        products = state.productData.filter(element => {
+          if(element.id === Number(state.search)){
+            return element
+          }
+          else if(element.name === state.search){
+            return element
+          }
+          else if(element.price === Number(state.search)){
+            return element 
+          }
+          else if(element.status === state.search){
+            return element
+          }
+    })}}
 
-    
-//Поиск товаров
-const filter = () => {
-
-}
-    if(state.resultSearch !== '' && state.resultSearch !== products && state.search !== ''){
-        setProducts(products = productData)
-        setProducts(products = state.resultSearch)
-    }
-
-    if(state.search === '' && state.resultSearch === products){
-        setProducts(products = state.productData)
-    }
-
-
-
-    
-// Фильтрация товара на странице
     const changeFilter = (event) => {
-        const filterValue = event.target.value
-        if(filterValue === 'All'){
-             setProducts( products = productData) }
-        if(filterValue === 'New' || filterValue === 'Sale'){
-            
-            
-            setProducts(() => {
-                products = productData
-                return products.filter((product) => {
-                    return( product.status === filterValue )
-                })
-            })
-        }
+      dispatch({ type:'setProductSearch', payload: event.target.value})
     }
-
+      
+    console.log(state)
     return(
         <div className="product_block">
         <h3 id="lng-products">{translate.products}</h3>
@@ -64,8 +49,9 @@ const filter = () => {
             </select>
             </div>
         <div className="product_row" id="product" >
-            {  products.map(product => {return (<ProductItem product={product} key={product.id} />)})}
-        </div>
+            {Search()}
+            { products.map( product => (<ProductItem product={product} key={product.id} />)) }
+          </div>
         </div>
         
     )  
