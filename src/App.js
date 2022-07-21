@@ -28,6 +28,7 @@ function App() {
           <Route path="glasses/card" element = {<Card/> } />
           <Route path="glasses/cart" element = {<Cart/> } />
           <Route path="glasses/login" element = {<Login/> } />
+          <Route path="*" element = {<h1>Page not Found</h1>}/>
         </Routes>
         <Footer />
       </BrowserRouter> 
