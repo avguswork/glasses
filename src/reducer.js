@@ -4,7 +4,7 @@ import data from "./Data";
 export const ContextApp = React.createContext();
 
 //Счетчик корзины
-export const initialState = {productData: data, currensy: '$', productCart: [], card: [], search: '', resultSearch: ''}
+export const initialState = {productData: data, currensy: '$', coefficient: '1', productCart: [], card: [], search: '', resultSearch: ''}
 
 
 export const reducer = (state, action) => {
@@ -15,22 +15,25 @@ export const reducer = (state, action) => {
           return {count: state.count - 1};
 
         case 'currensy':
-          return{...state, currensy: action.payload }
+          return{...state, currensy: action.payload };
+
+        case 'coefficient':
+          return{...state, coefficient: action.payload };
 
         case 'addCard':
-          return{ ...state, card: action.payload }
+          return{ ...state, card: action.payload };
 
         case 'setProductInCart':
-          return { ...state, productCart:  action.payload }
+          return { ...state, productCart:  action.payload };
         
         case 'dellProductInCart':
-          return { ...state, productCart:  action.payload }
+          return { ...state, productCart:  action.payload };
 
         case 'setProductSearch':
-          return { ...state, search:  action.payload }
+          return { ...state, search:  action.payload };
              
         case 'resultSearch':
-          return { ...state, resultSearch: action.payload }  
+          return { ...state, resultSearch: action.payload };
        
           
         case 'home':

@@ -54,6 +54,27 @@ const HeaderUpRow = () => {
 
     const changeCurrensy = (event) => {
         dispatch({ type: 'currensy', payload: event.target.value})
+        
+            switch (event.target.value) {
+      
+              case '$':
+                dispatch({type: 'coefficient', payload: '1'});
+                break;
+      
+              case '€':
+                dispatch({type: 'coefficient', payload: '0.95'});
+                break;
+              
+              case '₴':
+                dispatch({type: 'coefficient', payload: '30'});
+                break;
+      
+              default:
+                console.log( "Error" );
+        
+      
+            }
+          
     }
     return(
         <>
