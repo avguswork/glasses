@@ -6,7 +6,10 @@
     width: 100%;
     max-width: $wc;
     justify-content: center;
-    background-color: rgb(94, 212, 255);
+    background: linear-gradient(white, $color1);
+    border-width:  2px;
+    border-style: solid;
+    border-image: linear-gradient(to bottom, rgb(255, 255, 255), grey) 1;
     
 
 }

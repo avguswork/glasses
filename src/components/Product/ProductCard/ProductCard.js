@@ -1,4 +1,4 @@
-import React, { useState, useContext} from "react";
+import React, {useContext} from "react";
 import "./style.scss";
 import { Link } from "react-router-dom";
 import {ContextApp} from "../../../reducer";
@@ -8,7 +8,6 @@ import data from "../../../Data";
 function ProductCard(){
     
     const {state, dispatch} = useContext(ContextApp);
-   
 
     let product = data.filter((element) => {
         return (element.id === state.card.id)
@@ -16,19 +15,11 @@ function ProductCard(){
     product = product[0]
     let productPrice = state.coefficient * product.price
 
-    
-
-    //Создаем масив копируем туда инфо и пушим новый выбраный продукт
-    
     let arrays
     const addCart = () => {
         arrays = state.productCart.splice(0)
         arrays.push(state.card)
     }
-    
-    
-    
-    
 
 return(
     
@@ -62,7 +53,4 @@ return(
     
 )
 }
-
 export default ProductCard;
-
-//SetProductToCart(state.card);

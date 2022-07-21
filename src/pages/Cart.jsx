@@ -30,14 +30,14 @@ function Cart(){
         <>
         <div className="cart">
         <div className="cart_block">
-            <div className="cart_block_row">
+            <div className="cart_block_row gradient_down">
                 <div className="cart_block_column_name"><h4>Name</h4></div>
                 <div className="cart_block_column_amount"><h4>Amount</h4></div>
                 <div className="cart_block_column_price"><h4>Price</h4></div>
                 <div className="cart_block_column_del"></div>
             </div>
             {Products}
-            <div className="cart_block_row">
+            <div className="cart_block_row gradient_up">
             <div className="cart_block_column_name"></div>
                 <div className="cart_block_column_amount"><h4>Counter</h4></div>
                 <div className="cart_block_column_price"><h4>Price</h4></div>
