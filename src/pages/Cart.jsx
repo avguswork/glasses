@@ -20,9 +20,6 @@ function Cart(){
         dispatch({ type: 'setProductInCart', payload: element})
     }
     
-    
-    
-  
     const Products = cart.map((product) => {
         return( <CartItem product={product} key={product.id} dellProduct={dellProduct}/>)
     })
@@ -31,8 +28,7 @@ function Cart(){
     
     return(
         <>
-        
-       <div className="cart">
+        <div className="cart">
         <div className="cart_block">
             <div className="cart_block_row">
                 <div className="cart_block_column_name"><h4>Name</h4></div>
@@ -46,25 +42,10 @@ function Cart(){
                 <div className="cart_block_column_amount"><h4>Counter</h4></div>
                 <div className="cart_block_column_price"><h4>Price</h4></div>
                 <div className="cart_block_column_del"><button className="buy_btn">Buy</button></div>
-            </div>
-            
-        </div>
-        
-          
-            
+            </div>   
+        </div>   
        </div>
-    
        </>
-        
     )
 }
-
-
 export default Cart;
-
-
-/*
-function dell(){
-    return cart.filter((product) => { return id !== product.id})
-}
-*/

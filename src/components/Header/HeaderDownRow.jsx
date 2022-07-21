@@ -23,7 +23,7 @@ const HeaderDownRow = ({search}) => {
                     <div className="search_cart">
                         <div className="search">
                             <input type="search" placeholder="Search.." onChange={(event) => { dispatch({ type: 'setProductSearch', payload: event.target.value})}}  id="search"/>
-                            <button className="searchButton" onClick={() => {search() }} id="searchButton">&#128269;</button>
+                            <button className="searchButton" id="searchButton">&#128269;</button>
                         </div>
                         
                         <div className="iconBlock">

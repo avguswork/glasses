@@ -18,7 +18,7 @@ const data = [
         price: 90,
         currensy: '$',
         images: 'elem2.png',
-        status: 'All',
+        status: '',
         gender: 'male',
     },
     
@@ -38,7 +38,7 @@ const data = [
         price: 180,
         currensy: '$',
         images: 'elem4.png',
-        status: 'All',
+        status: '',
         gender: 'male',
     },
 
@@ -58,7 +58,7 @@ const data = [
         price: 378,
         currensy: '$',
         images: 'elem6.png',
-        status: 'All',
+        status: '',
         gender: 'male',
     },
 
@@ -108,7 +108,7 @@ const data = [
         price: 278,
         currensy: '$',
         images: 'elem11.png',
-        status: 'All',
+        status: '',
         gender: 'female',
     },
 

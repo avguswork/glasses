@@ -10,13 +10,9 @@ const Other = () => {
      let genderProduct = state.productData
     
     return(
-        <>
-        
         <div id="genderProductBlock" className="genderProductBlock">
         <ProductBlock genderProduct={genderProduct}/>
         </div>
-        </>
     )
 }
-
 export default Other

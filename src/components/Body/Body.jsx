@@ -3,11 +3,14 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
 
-const Body = () => {
+const Body = ({children}) => {
+
+    
+
     return(
         <>
             <Header />
-                {Children}
+                {children}
             <Footer />
         </>
     )
