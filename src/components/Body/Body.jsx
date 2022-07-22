@@ -1,11 +1,8 @@
-import React, { Children } from "react";
+
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
-
 const Body = ({children}) => {
-
-    
 
     return(
         <>
@@ -15,5 +12,4 @@ const Body = ({children}) => {
         </>
     )
 }
-
 export default Body;

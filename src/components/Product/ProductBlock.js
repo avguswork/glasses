@@ -5,11 +5,12 @@ import {useContext} from "react";
 import {ContextApp} from "../../reducer";
 import LanguageContext from "../../context";
 
+
 function ProductBlock () {
 
     const {translate} = useContext(LanguageContext)
     const {state, dispatch} = useContext(ContextApp);
-
+  
     let products = state.productData;
 
     const Search = () => {
@@ -29,13 +30,13 @@ function ProductBlock () {
           }
           else if(element.status === state.search){
             return element
-          }
+          }      
     })}}
 
     const changeFilter = (event) => {
       dispatch({ type:'setProductSearch', payload: event.target.value})
     }
-      
+    
     console.log(state)
     return(
         <div className="product_block">

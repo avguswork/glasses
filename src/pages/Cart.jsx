@@ -3,6 +3,7 @@ import { useState, useContext } from "react";
 import "./cartStyle.scss";
 import CartItem from "../components/Cart/CartItem/CartItem";
 import { ContextApp } from "../reducer";
+import Body from "../components/Body/Body";
 
 
 
@@ -27,7 +28,7 @@ function Cart(){
    console.log(state)
     
     return(
-        <>
+        <Body>
         <div className="cart">
         <div className="cart_block">
             <div className="cart_block_row gradient_down">
@@ -45,7 +46,7 @@ function Cart(){
             </div>   
         </div>   
        </div>
-       </>
+       </Body>
     )
 }
 export default Cart;

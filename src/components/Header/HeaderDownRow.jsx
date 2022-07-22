@@ -6,9 +6,12 @@ import {ContextApp} from "../../reducer";
 import LanguageContext from "../../context";
 
 
-const HeaderDownRow = ({search}) => {
+const HeaderDownRow = () => {
     const {state, dispatch} = useContext(ContextApp);
     const {translate} = useContext(LanguageContext);
+
+        
+
     return(
         <>
             <div className="downRow">
