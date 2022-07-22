@@ -36,7 +36,7 @@ function ProductBlock () {
     const changeFilter = (event) => {
       dispatch({ type:'setProductSearch', payload: event.target.value})
     }
-    
+
     console.log(state)
     return(
         <div className="product_block">

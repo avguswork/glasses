@@ -3,7 +3,7 @@ import "./style.scss";
 import { Link } from "react-router-dom";
 import {ContextApp} from "../../../reducer";
 import data from "../../../Data";
-
+import { useSearchParams } from "react-router-dom";
 
 function ProductCard(){
     
@@ -21,6 +21,18 @@ function ProductCard(){
         arrays.push(state.card)
     }
 
+    
+    let [searchParams, setSearchParams] = useSearchParams();
+
+  const params = () => {
+    console.log(product.id)
+    let params =  searchParams.get("filter") || "";
+    setSearchParams({filter: product.id});
+  }
+
+
+  //params()
+
 return(
     
     <div className="card">        
@@ -33,7 +45,7 @@ return(
             <img src= { require(`./image/${state.card.images}`)}  alt="name"/>
                 
             </div>
-        
+            
             <div className="description">
                 <h1>{state.card.name}</h1>
                 <div className="card_price_row">
