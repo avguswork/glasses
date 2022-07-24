@@ -32,7 +32,9 @@ function ProductItem (props) {
             </div>
             <div className="product_item">
             
-            <Link to ="/glasses/card"  className="btn"><img src= { require(`./image/${image}`)} onClick={() => {   dispatch({ type: 'addCard', payload: props.product}) }} id="productImage" alt={props.product.name}/></Link>
+            <Link to={`/glasses/card/${props.product.id}`} key={`${props.product.id}`} className="btn">
+                <img src= { require(`./image/${image}`)} onClick={() => {   dispatch({ type: 'addCard', payload: props.product}) }} id="productImage" alt={props.product.name}/>
+            </Link>
                 
                <div className="price_row">
                         <p>
