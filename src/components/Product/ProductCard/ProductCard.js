@@ -3,12 +3,11 @@ import "./style.scss";
 import { Link } from "react-router-dom";
 import {ContextApp} from "../../../reducer";
 import data from "../../../Data";
-import { useSearchParams } from "react-router-dom";
 
 function ProductCard(){
     
     const {state, dispatch} = useContext(ContextApp);
-
+    
     let product = data.filter((element) => {
         return (element.id === state.card.id)
     })
@@ -22,23 +21,14 @@ function ProductCard(){
     }
 
     
-    let [searchParams, setSearchParams] = useSearchParams();
-
-  const params = () => {
-    console.log(product.id)
-    let params =  searchParams.get("filter") || "";
-    setSearchParams({filter: product.id});
-  }
-
-
-  //params()
+    
 
 return(
     
     <div className="card">        
         <div className="card_header_row">
         <Link to="/glasses"><span className="icon_home" id="lng-home2">Home</span></Link>
-        <Link to="/glasses/Card"><p>&nbsp;&nbsp;＞&nbsp;&nbsp;Card</p></Link>   
+        <Link to="/glasses/card"><p>&nbsp;&nbsp;＞&nbsp;&nbsp;Card</p></Link>   
         </div>
         <div className="card_product_block">
             <div className="card_slider">

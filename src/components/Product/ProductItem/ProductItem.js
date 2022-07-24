@@ -1,7 +1,7 @@
 import React from "react";
 import './style.css';
 import {useState, useContext} from 'react';
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import {ContextApp} from "../../../reducer";
 
 
@@ -32,21 +32,20 @@ function ProductItem (props) {
             </div>
             <div className="product_item">
             
-            <Link to="/glasses/card"  className="btn"><img src= { require(`./image/${image}`)} onClick={() => {   dispatch({ type: 'addCard', payload: props.product}) }} id="productImage" alt={props.product.name}/></Link>
+            <Link to ="/glasses/card"  className="btn"><img src= { require(`./image/${image}`)} onClick={() => {   dispatch({ type: 'addCard', payload: props.product}) }} id="productImage" alt={props.product.name}/></Link>
                 
                <div className="price_row">
                         <p>
-                        <Link 
-                            to= {`/glasses/card/${props.product.id}`}
-                            key={`${props.product.id}`}
-                            className="btn"><span  className="product_name" onClick={() => { dispatch({ type: 'addCard', payload: props.product}) }}>{props.product.name}</span><br /></Link>
+                        <Link to={`/glasses/card/${props.product.id}`} key={`${props.product.id}`} className="btn">
+                            <span  className="product_name" onClick={() => { dispatch({ type: 'addCard', payload: props.product}) }}>{props.product.name}</span><br />
+                        </Link>
                             <span  className="product_price">{`${state.currensy}${productPrice.toFixed(2)}`}</span>
                         </p>
-                        
-                   
                 </div>
             </div>
+            <Outlet />
         </div>
+        
     )
 }
 

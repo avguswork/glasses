@@ -21,7 +21,7 @@ function App() {
           <Route path = "glasses/women" element = {<Women/> } />
           <Route path = "glasses/men" element = {<Men/> } />
           <Route path = "glasses/other" element = {<Other/> } />
-          <Route path = "glasses/card" element = {<Card/> } />
+          <Route path = "glasses/card/:id" element = {<Card/> } />
           <Route path = "glasses/cart" element = {<Cart/> } />
           <Route path = "glasses/login" element = {<Login/> } />
           <Route path = "*" element = {<h1>Page not Found</h1>}/>
