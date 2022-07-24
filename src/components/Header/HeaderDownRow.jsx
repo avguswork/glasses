@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.scss";
-import {Link} from "react-router-dom";
+import {Link, useSearchParams} from "react-router-dom";
 import { useContext} from "react";
 import {ContextApp} from "../../reducer";
 import LanguageContext from "../../context";
@@ -9,8 +9,16 @@ import LanguageContext from "../../context";
 const HeaderDownRow = () => {
     const {state, dispatch} = useContext(ContextApp);
     const {translate} = useContext(LanguageContext);
+    const [searchParams, setSearchParams] = useSearchParams();
 
-        
+    const SetSearchParam = (event) => {
+        const SearchParams = searchParams.get("search") || ""
+            let search = event.target.value;
+            if (search) {
+              setSearchParams({ search });
+            } else {
+              setSearchParams({});
+            }}
 
     return(
         <>
@@ -25,7 +33,7 @@ const HeaderDownRow = () => {
                     </div>
                     <div className="search_cart">
                         <div className="search">
-                            <input type="search" placeholder="Search.." onChange={(event) => { dispatch({ type: 'setProductSearch', payload: event.target.value})}}  id="search"/>
+                            <input type="search" placeholder="Search.." onChange={SetSearchParam}   id="search"/>
                             <button className="searchButton" id="searchButton">&#128269;</button>
                         </div>
                         
@@ -43,3 +51,6 @@ const HeaderDownRow = () => {
 }
 
 export default HeaderDownRow;
+
+
+//onChange={(event) => { dispatch({ type: 'setProductSearch', payload: event.target.value})}}

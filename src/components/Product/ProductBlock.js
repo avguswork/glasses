@@ -4,40 +4,51 @@ import './style.css';
 import {useContext} from "react";
 import {ContextApp} from "../../reducer";
 import LanguageContext from "../../context";
+import {useSearchParams} from "react-router-dom";
 
 
 function ProductBlock () {
 
     const {translate} = useContext(LanguageContext)
-    const {state, dispatch} = useContext(ContextApp);
+    const {state} = useContext(ContextApp);
+    const [searchParams, setSearchParams] = useSearchParams();
   
     let products = state.productData;
 
+    const changeFilter = (event) => {
+      const filterParams = searchParams.get("filter") || ""
+      let filter = event.target.value;
+      if (filter) {
+        setSearchParams({ filter });
+      } else { 
+        setSearchParams({});}}
+
     const Search = () => {
-      if(state.search === "All"){
+      
+      let filter = searchParams.get("filter");
+      if(filter === "New" || filter === "Sale"){
+        products = state.productData.filter(element => { 
+          return element.status === filter
+      })}
+      else{
         products = state.productData
       }
-      else if(state.search !== ""){
+
+      let search = searchParams.get("search");
+      if(search){
         products = state.productData.filter(element => {
-          if(element.id === Number(state.search)){
+          if(element.id === Number(search)){
             return element
           }
-          else if(element.name === state.search){
+          else if(element.name.toLowerCase() === search.toLowerCase()){
             return element
           }
-          else if(element.price === Number(state.search)){
+          else if(element.price === Number(search)){
             return element 
           }
-          else if(element.status === state.search){
-            return element
-          }      
-    })}}
+    })}
+  }
 
-    const changeFilter = (event) => {
-      dispatch({ type:'setProductSearch', payload: event.target.value})
-    }
-
-    console.log(state)
     return(
         <div className="product_block">
         <h3 id="lng-products">{translate.products}</h3>
@@ -58,3 +69,4 @@ function ProductBlock () {
     )  
 }
 export default ProductBlock;
+
