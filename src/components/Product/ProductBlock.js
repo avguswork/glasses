@@ -37,16 +37,8 @@ function ProductBlock () {
       let search = searchParams.get("search");
       if(search){
         products = state.productData.filter(element => {
-          if(element.id === Number(search)){
-            return element
-          }
-          else if(element.name.toLowerCase() === search.toLowerCase()){
-            return element
-          }
-          else if(element.price === Number(search)){
-            return element 
-          }
-    })}
+          return  element.name.toLowerCase().startsWith(search.toLowerCase());
+      })}
   }
 
     return(
