@@ -1,15 +1,16 @@
 import React, {useContext} from "react";
 import "./style.scss";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import {ContextApp} from "../../../reducer";
 import data from "../../../Data";
 
 function ProductCard(){
     
     const {state, dispatch} = useContext(ContextApp);
-    
+    let params = useParams();
+    console.log(Number(params.id))
     let product = data.filter((element) => {
-        return (element.id === state.card.id)
+        return (element.id === Number(params.id))
     })
     product = product[0]
     let productPrice = state.coefficient * product.price
@@ -20,7 +21,7 @@ function ProductCard(){
         arrays.push(state.card)
     }
 
-    
+    console.log(state)
     
 
 return(
@@ -32,7 +33,7 @@ return(
         </div>
         <div className="card_product_block">
             <div className="card_slider">
-            <img src= { require(`./image/${state.card.images}`)}  alt="name"/>
+            <img src= { require(`./image/${product.images}`)}  alt="name"/>
                 
             </div>
             
@@ -56,3 +57,6 @@ return(
 )
 }
 export default ProductCard;
+
+
+//
