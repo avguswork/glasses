@@ -18,10 +18,9 @@ function ProductBlock () {
     const changeFilter = (event) => {
       const filterParams = searchParams.get("filter") || ""
       let filter = event.target.value;
-      if (filter) {
-        setSearchParams({ filter });
-      } else { 
-        setSearchParams({});}}
+      if (filter) { setSearchParams({ filter })} 
+      else { setSearchParams({})}
+    }
 
     const Search = () => {
       
