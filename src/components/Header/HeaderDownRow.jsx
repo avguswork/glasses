@@ -12,7 +12,7 @@ const HeaderDownRow = () => {
     const [searchParams, setSearchParams] = useSearchParams();
 
     const SetSearchParam = (event) => {
-        const SearchParams = searchParams.get("search") || ""
+        const setParams = searchParams.get("search") || ""
             let search = event.target.value;
             if (search) {
               setSearchParams({ search });
